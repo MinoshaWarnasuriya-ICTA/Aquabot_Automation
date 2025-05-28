@@ -1,0 +1,18 @@
+1.Validate the text in the home page carousel
+2.Click change text button and check whether the button text is changed
+3.Click popup button and fill all the data fields and click validate button
+4.Click alert button and accept alert
+5.Click alert button and decline alert
+6.Click open a new window button and validate the text displayed and close window
+7.Fill the demo contact form
+7.Go to table 1 and get state wise total
+8.Go to table 2 and get the total price of available products
+9.Go to table 2 and filter customer by 3 letters and validate that the customer name contains
+searched letters
+10.Go to dropdowns page and click link selected options and check whether the selected option
+is visible on the top
+11.Click toggle dropdown and select an option
+12.Select a dropdown and then select an option
+13.Enter text in combo box and then select an option from suggestions
+14.Select few options and create an option group
+15.Select multiple options from multi select
