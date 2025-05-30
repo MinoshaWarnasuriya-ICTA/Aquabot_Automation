@@ -4,7 +4,9 @@
 4.Click alert button and accept alert
 5.Click alert button and decline alert
 6.Click open a new window button and validate the text displayed and close window
-7.Fill the demo contact form
+7.Click link to a section and fill the demo contact form
+8.Click link to external site and verify whether the www.google.com is open in the next window
+9.Click open in current window and verify the text displayed and click go back button
 7.Go to table 1 and get state wise total
 8.Go to table 2 and get the total price of available products
 9.Go to table 2 and filter customer by 3 letters and validate that the customer name contains

@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d396bac1-d820-4bd7-bf92-1033313ab48d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testcases.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Testcases.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FunctionalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FunctionalTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +24,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MinoshaWarnasuriya-ICTA&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/MinoshaWarnasuriya-ICTA/Aquabot_Automation.git&quot;,
+    &quot;accountId&quot;: &quot;f0a69afd-ba9c-4051-9829-38b3aaef034b&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -43,37 +53,16 @@
     "TestNG.FunctionalTest.declineAlert.executor": "Run",
     "TestNG.FunctionalTest.executor": "Run",
     "TestNG.FunctionalTest.fillDemoForm.executor": "Run",
+    "TestNG.FunctionalTest.linkToExternalSite.executor": "Run",
     "TestNG.FunctionalTest.openANewWindow.executor": "Run",
+    "TestNG.FunctionalTest.openInCurrentWindow.executor": "Run",
     "TestNG.FunctionalTest.popupTest.executor": "Run",
     "TestNG.FunctionalTest.validateBannerTest.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.FunctionalTest.fillDemoForm">
-    <configuration name="FunctionalTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Aquabot" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FunctionalTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FunctionalTest.acceptAlert" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Aquabot" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FunctionalTest" />
-      <option name="METHOD_NAME" value="acceptAlert" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.FunctionalTest.openInCurrentWindow">
     <configuration name="FunctionalTest.declineAlert" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Aquabot" />
       <option name="PACKAGE_NAME" value="" />
@@ -98,6 +87,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FunctionalTest.linkToExternalSite" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Aquabot" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FunctionalTest" />
+      <option name="METHOD_NAME" value="linkToExternalSite" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FunctionalTest.openANewWindow" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Aquabot" />
       <option name="PACKAGE_NAME" value="" />
@@ -110,13 +111,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FunctionalTest.openInCurrentWindow" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Aquabot" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FunctionalTest" />
+      <option name="METHOD_NAME" value="openInCurrentWindow" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.FunctionalTest.openInCurrentWindow" />
+        <item itemvalue="TestNG.FunctionalTest.linkToExternalSite" />
         <item itemvalue="TestNG.FunctionalTest.fillDemoForm" />
         <item itemvalue="TestNG.FunctionalTest.openANewWindow" />
         <item itemvalue="TestNG.FunctionalTest.declineAlert" />
-        <item itemvalue="TestNG.FunctionalTest.acceptAlert" />
-        <item itemvalue="TestNG.FunctionalTest" />
       </list>
     </recent_temporary>
   </component>
@@ -130,16 +143,5 @@
       <updated>1748143278407</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/FunctionalTest.java</url>
-          <line>173</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

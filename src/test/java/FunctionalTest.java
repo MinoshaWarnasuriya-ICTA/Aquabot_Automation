@@ -30,7 +30,7 @@ public class FunctionalTest {
 
     public void waitForElementToBeClickable(WebDriver driver,WebElement element)
     {
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(7));
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
@@ -176,14 +176,54 @@ driver.findElement(By.cssSelector("input[type='email']")).sendKeys(email);
 driver.findElement(By.id("cphone")).sendKeys(phone);
 driver.findElement(By.cssSelector(".radio-container:nth-of-type(2)")).click();
 driver.findElement(By.xpath("//*[@id='cmessage']")).sendKeys(message);
-
 WebElement dropDown = driver.findElement(By.cssSelector("[id='cselect']"));
 Select select =new Select(dropDown);
 select.selectByVisibleText(dropdownOption);
 driver.findElement(By.id("cerror")).click();
 driver.findElement(By.xpath("//*[text()='SUBMIT']")).click();
 Assert.assertEquals(driver.findElement(By.id("cmsgSubmit")).getText(),toastMsge);
+}
 
+@Test
+    public void linkToExternalSite() throws InterruptedException {
+    driver.get("https://aquabottesting.com/index.html");
+    FunctionalTest ft = new FunctionalTest();
+    ft.clickDiscoverBtn(driver);
+WebElement linkToExternalSite =  driver.findElement(By.linkText("LINK TO EXTERNAL SITE"));
+   ft.waitForElementToBeClickable(driver,linkToExternalSite);
+   linkToExternalSite.click();
+    String parentWindow = driver.getWindowHandle();
+   Set<String> windowHandles= driver.getWindowHandles();
+  Iterator<String> it =  windowHandles.iterator();
 
+while (it.hasNext())
+    {
+        String childWindow = it.next();
+        if(!childWindow.equals(parentWindow))
+        {
+            driver.switchTo().window(childWindow);
+        }
+    }
+
+  Assert.assertEquals(driver.getCurrentUrl(),"https://www.google.com/");
+
+}
+
+@Test
+    public void openInCurrentWindow() throws InterruptedException {
+    driver.get("https://aquabottesting.com/index.html");
+    FunctionalTest ft = new FunctionalTest();
+    ft.clickDiscoverBtn(driver);
+    WebElement linkInCurrentWindow = driver.findElement(By.id("new-window-link"));
+    waitForElementToBeClickable(driver,linkInCurrentWindow);
+   // Thread.sleep(3000);
+    linkInCurrentWindow.click();
+    WebElement title = driver.findElement(By.xpath("//h1"));
+    waitForElementToBeVisible(driver, title);
+    Assert.assertEquals(title.getText(),"You opened a new window.");
+    driver.findElement(By.xpath("//*[text()='GO BACK']")).click();
+    WebElement formTitle = driver.findElement(By.xpath("//h2"));
+    waitForElementToBeVisible(driver,formTitle);
+    Assert.assertEquals(formTitle.getText(),"Demo Contact Form");
 }
 }
