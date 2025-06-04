@@ -1,6 +1,7 @@
 import io.github.bonigarcia.wdm.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.interactions.*;
 import org.openqa.selenium.support.ui.*;
 import org.testng.*;
 import org.testng.annotations.*;
@@ -45,6 +46,15 @@ public class FunctionalTest {
   JavascriptExecutor js = (JavascriptExecutor)driver;
  return js;
     }
+
+    public void scrollDownToElement(WebDriver driver,WebElement element)
+    {
+FunctionalTest ft = new FunctionalTest();
+JavascriptExecutor js =ft.getJavaScriptExecutor(driver);
+js.executeScript("arguments[0].scrollIntoView();",element);
+    }
+
+
     @Test
     public void validateBannerTest() {
         String expectedBannerText = "Automated Testing Playground";
@@ -226,4 +236,126 @@ while (it.hasNext())
     waitForElementToBeVisible(driver,formTitle);
     Assert.assertEquals(formTitle.getText(),"Demo Contact Form");
 }
+
+    public void getStateWiseBalance(WebDriver driver,String state)
+{
+    driver.get("https://aquabottesting.com/index.html");
+    Actions a = new Actions(driver);
+    WebElement dropdown = driver.findElement(By.xpath("//a[@id='navbarDropdown2']"));
+   a.moveToElement(dropdown).build().perform();
+   WebElement tableDropdown = driver.findElement(By.xpath("(//*[@class='dropdown-menu'])[1]"));
+   waitForElementToBeVisible(driver,tableDropdown);
+   driver.findElement(By.xpath("(//*[@class='dropdown-menu'])[1]/a[1]")).click();
+   WebElement table = driver.findElement(By.cssSelector("#js-sort-table"));
+   waitForElementToBeVisible(driver,table);
+   Assert.assertTrue(table.isDisplayed());
+
+    List<WebElement> states = driver.findElements(By.xpath("//tbody/tr/td[2]"));
+
+    List<WebElement> balances = driver.findElements(By.xpath("//tbody/tr/td[5]"));
+    double total=0.0;
+
+    for(int i=0;i<states.size();i++)
+    {
+        if(states.get(i).getText().equalsIgnoreCase(state))
+        {
+            String balance =   balances.get(i).getText().replace('$',' ').trim();
+//            System.out.println(balance);
+            try {
+               double balanceDble = Double.parseDouble(balance);
+                total=total+balanceDble;
+            } catch(NumberFormatException nfe)
+            {
+                System.out.println("Invalid number format: "+balance);
+            }
+
+        }
+    }
+   System.out.println("Total balance of "+state+": "+total);
 }
+
+@Test
+    public void getCATotal()
+{
+    String state ="CA";
+    FunctionalTest ft = new FunctionalTest();
+    ft.getStateWiseBalance(driver,state);
+}
+
+@Test
+    public void getNVTotal()
+{
+    String state ="NV";
+    FunctionalTest ft = new FunctionalTest();
+    ft.getStateWiseBalance(driver,state);
+}
+
+    @Test
+    public void getORTotal()
+    {
+        String state ="OR";
+        FunctionalTest ft = new FunctionalTest();
+        ft.getStateWiseBalance(driver,state);
+    }
+
+    @Test
+    public void getTotalPriceOfAvailableProducts()
+    {
+        driver.get("https://aquabottesting.com/index.html");
+        Actions a = new Actions(driver);
+        a.moveToElement(driver.findElement(By.cssSelector("#navbarDropdown2"))).build().perform();
+        WebElement table2 = driver.findElement(By.xpath("(//*[@class='dropdown-item']/span)[2]"));
+        waitForElementToBeClickable(driver,table2);
+        table2.click();
+        WebElement priceTable = driver.findElement(By.cssSelector("#pricing-table"));
+FunctionalTest ft =new FunctionalTest();
+ft.scrollDownToElement(driver,priceTable);
+Assert.assertTrue(priceTable.isDisplayed());
+List<WebElement> avalRows = driver.findElements(By.cssSelector("#pricing-table tbody tr td:nth-of-type(5) img"));
+List<WebElement> prices = driver.findElements(By.cssSelector("#pricing-table tbody tr td:nth-of-type(4)"));
+double totalPrice = 0.0;
+for(int i=0;i<avalRows.size();i++)
+{
+if(avalRows.get(i).getAttribute("alt").equalsIgnoreCase("checkmark"))
+{
+    String price = prices.get(i).getText().replace('$', ' ').trim();
+   totalPrice=totalPrice+ Double.parseDouble(price);
+}
+}
+        System.out.println("Total price of all available products is: "+totalPrice);
+    }
+
+    @Test
+    public void filterCustomers()
+    {
+        String filterBy = "Jod";
+        driver.get("https://aquabottesting.com/index.html");
+        Actions a = new Actions(driver);
+        a.moveToElement(driver.findElement(By.cssSelector("#navbarDropdown2"))).build().perform();
+        WebElement table2 = driver.findElement(By.xpath("(//*[@class='dropdown-item']/span)[2]"));
+        waitForElementToBeClickable(driver,table2);
+        table2.click();
+        driver.findElement(By.id("filter-input")).sendKeys(filterBy);
+        boolean flag = false;
+        List<WebElement> customers =  driver.findElements(By.xpath("//*[@id='filter-table']/tbody/tr"));
+         WebElement filteredCustomer=null;
+
+        for(WebElement customer:customers)
+        {
+            if(!customer.getAttribute("style").equalsIgnoreCase("display: none;"))
+            {
+                filteredCustomer=customer;
+            }
+        }
+
+        String cName =filteredCustomer.getText();
+        if(cName.contains(filterBy))
+        {
+            flag = true;
+        }
+Assert.assertTrue(flag);
+
+    }
+}
+
+

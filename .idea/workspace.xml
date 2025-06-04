@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d396bac1-d820-4bd7-bf92-1033313ab48d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Testcases.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Testcases.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/FunctionalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FunctionalTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,12 +47,21 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.BrokenLinkTest.executor": "Run",
+    "Application.TableTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "TestNG.FunctionalTest.acceptAlert.executor": "Run",
     "TestNG.FunctionalTest.checkBtnTextChange.executor": "Run",
     "TestNG.FunctionalTest.declineAlert.executor": "Run",
     "TestNG.FunctionalTest.executor": "Run",
     "TestNG.FunctionalTest.fillDemoForm.executor": "Run",
+    "TestNG.FunctionalTest.filterCustomers.executor": "Debug",
+    "TestNG.FunctionalTest.getCATotal.executor": "Run",
+    "TestNG.FunctionalTest.getCATotalAccBalance.executor": "Run",
+    "TestNG.FunctionalTest.getNVTotal.executor": "Run",
+    "TestNG.FunctionalTest.getORTotal.executor": "Run",
+    "TestNG.FunctionalTest.getStateWiseAccBalance.executor": "Run",
+    "TestNG.FunctionalTest.getTotalPriceOfAvailableProducts.executor": "Run",
     "TestNG.FunctionalTest.linkToExternalSite.executor": "Run",
     "TestNG.FunctionalTest.openANewWindow.executor": "Run",
     "TestNG.FunctionalTest.openInCurrentWindow.executor": "Run",
@@ -62,12 +71,19 @@
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.FunctionalTest.openInCurrentWindow">
-    <configuration name="FunctionalTest.declineAlert" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.FunctionalTest.filterCustomers">
+    <configuration name="BrokenLinkTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BrokenLinkTest" />
+      <module name="Aquabot" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FunctionalTest.filterCustomers" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Aquabot" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="FunctionalTest" />
-      <option name="METHOD_NAME" value="declineAlert" />
+      <option name="METHOD_NAME" value="filterCustomers" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -75,11 +91,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FunctionalTest.fillDemoForm" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="FunctionalTest.getNVTotal" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Aquabot" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="FunctionalTest" />
-      <option name="METHOD_NAME" value="fillDemoForm" />
+      <option name="METHOD_NAME" value="getNVTotal" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -87,11 +103,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FunctionalTest.linkToExternalSite" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="FunctionalTest.getORTotal" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Aquabot" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="FunctionalTest" />
-      <option name="METHOD_NAME" value="linkToExternalSite" />
+      <option name="METHOD_NAME" value="getORTotal" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -99,23 +115,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FunctionalTest.openANewWindow" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="FunctionalTest.getTotalPriceOfAvailableProducts" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Aquabot" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="FunctionalTest" />
-      <option name="METHOD_NAME" value="openANewWindow" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FunctionalTest.openInCurrentWindow" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Aquabot" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FunctionalTest" />
-      <option name="METHOD_NAME" value="openInCurrentWindow" />
+      <option name="METHOD_NAME" value="getTotalPriceOfAvailableProducts" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -125,11 +129,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.FunctionalTest.openInCurrentWindow" />
-        <item itemvalue="TestNG.FunctionalTest.linkToExternalSite" />
-        <item itemvalue="TestNG.FunctionalTest.fillDemoForm" />
-        <item itemvalue="TestNG.FunctionalTest.openANewWindow" />
-        <item itemvalue="TestNG.FunctionalTest.declineAlert" />
+        <item itemvalue="TestNG.FunctionalTest.filterCustomers" />
+        <item itemvalue="TestNG.FunctionalTest.getTotalPriceOfAvailableProducts" />
+        <item itemvalue="Application.BrokenLinkTest" />
+        <item itemvalue="TestNG.FunctionalTest.getORTotal" />
+        <item itemvalue="TestNG.FunctionalTest.getNVTotal" />
       </list>
     </recent_temporary>
   </component>
@@ -143,5 +147,16 @@
       <updated>1748143278407</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/FunctionalTest.java</url>
+          <line>338</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
